@@ -7,6 +7,7 @@ require ('PHPMailerAutoload.php');
 echo "Enter the password for the sending email account: ";
 $handle = fopen ("php://stdin","r");
 $password = fgets($handle);
+
 // Sets server settings and sends mail
 function setAndSendMail($toFind, $url, $password) {
     $mail = new PHPMailer();
