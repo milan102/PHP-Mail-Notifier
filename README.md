@@ -16,4 +16,4 @@ A successful text message received:
 
 *To use this program, you will need a gmail account.*
 
-*You can send text messages by identifying your carrier's SMS gateway, [full list here](https://mfitzp.io/list-of-email-to-sms-gateways/). For example, if you have Verizon Wireless, the receiving email would be [yourphonenumber]@vztext.com. This allows you to receive an instant text message on your phone.*
+*You can receive text messages by identifying your carrier's SMS gateway, [full list here](https://mfitzp.io/list-of-email-to-sms-gateways/). For example, if you have Verizon Wireless, the receiving email would be [yourphonenumber]@vztext.com. This allows you to receive an instant text message on your phone from a message originating from an email.*
