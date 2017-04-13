@@ -1,6 +1,6 @@
 # PHP-Mail-Notifier
 
-This program sends emails/texts to a receiving address when a specified item is located on a web page's HTML code. Great for being notified about a specific change on a page that regularly updates. Get instant updates through your phone by setting the receiving email address to your phone's SMS email.
+This program sends emails/texts, using Google's SMTP server, to a receiving address when a specified item is located on a web page's HTML code. Great for being notified about a specific change on a page that regularly updates. Get instant updates through your phone by setting the receiving email address to your phone's SMS email.
 
 
 ## Instructions:
