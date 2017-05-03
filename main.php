@@ -1,9 +1,19 @@
 <?php
 
+/**********************************************************************
+ * The following values must be changed to run this code:
+ * 1) $mail->Username in the setAndSendMail function
+ * 2) $mail->SetFrom in the setAndSendMail function (identical to above)
+ * 3) $mail->AddAddress in the setAndSendMail function
+ * 4) $url variable below the function
+ * 5) $toFind variable below the function
+ *********************************************************************/
+
+
 // Require PHPMailer sending library
 require ('PHPMailerAutoload.php');
 
-// Get password of the gmail account you're sending from
+// User types password of the gmail account from the console
 echo "Enter the password for the sending email account: ";
 $handle = fopen ("php://stdin","r");
 $password = fgets($handle);
@@ -38,15 +48,16 @@ function setAndSendMail($toFind, $url, $password) {
 $url = "https://slickdeals.net/"; // URL to check
 $htmlContents = file_get_contents($url); // Store site's HTML contents in a string
 $toFind = "Dell Laptop"; // Item to locate
+$counter = 1; // Counter to show how many times checked URL
 
 // Checks website's HTML code for a specified item. If detected, sends mail.
-function checkSite($haystack, $needle, $url, $password) {
+function checkSite($haystack, $needle, $url, $password, $counter) {
     if (strpos($haystack, $needle) !== false) {
         echo "\nFound " . $needle . " on " . $url;
         setAndSendMail($needle, $url, $password);
         return True;
     } else {
-        echo "\nCould not locate " . $needle . " on " . $url;
+        echo "\n(" . $counter . ")Could not locate " . $needle . " on " . $url;
         return False;
     }
 }
@@ -54,10 +65,11 @@ function checkSite($haystack, $needle, $url, $password) {
 $interval = 15; // Minutes to check for every interval
 
 // Keep running until item is found, because checkSite() would return True if found
-while (!checkSite($htmlContents, $toFind, $url, $password))
+while (!checkSite($htmlContents, $toFind, $url, $password, $counter))
 {
     $now = time();
     sleep($interval * 60 - (time() - $now)); // Pause for specified amount of time in $interval
+    $counter++;
 }
 
 ?>
