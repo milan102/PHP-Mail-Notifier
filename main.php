@@ -52,7 +52,7 @@ $counter = 1; // Counter to show how many times checked URL
 
 // Checks website's HTML code for a specified item. If detected, sends mail.
 function checkSite($haystack, $needle, $url, $password, $counter) {
-    if (strpos($haystack, $needle) !== false) {
+    if (strpos($haystack, $needle)) {
         echo "\nFound " . $needle . " on " . $url;
         setAndSendMail($needle, $url, $password);
         return True;
@@ -67,6 +67,8 @@ $interval = 15; // Minutes to check for every interval
 // Keep running until item is found, because checkSite() would return True if found
 while (!checkSite($htmlContents, $toFind, $url, $password, $counter))
 {
+    $htmlContents = file_get_contents($url);
+    
     $now = time();
     sleep($interval * 60 - (time() - $now)); // Pause for specified amount of time in $interval
     $counter++;
