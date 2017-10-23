@@ -17,3 +17,6 @@ A successful text message received:
 *To use this program, you will need a gmail account.*
 
 *You can receive text messages by identifying your carrier's SMS gateway, [full list here](https://mfitzp.io/list-of-email-to-sms-gateways/). For example, if you have Verizon Wireless, the receiving email would be [yourphonenumber]@vztext.com. This allows you to receive an instant text message on your phone from a sender originating from an email.*
+
+## Donations
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HL3P4UC2JKEAN&lc=US&item_name=Milan%27s%20Software&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted)
